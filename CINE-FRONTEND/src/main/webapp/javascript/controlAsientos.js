@@ -1,0 +1,45 @@
+/*
+    Universidad Nacional de Costa Rica
+    Escuela de Informática
+    EIF209 Programación IV, ciclo I 2021
+    Mauricio Gutiérrez Vásquez 118260119
+    Adolfo Di Carlo Martínez Martínez 118050228
+    Yeikol Villalobos Herrera 702670531
+    Proyecto #2, Cine
+*/
+
+/**CONTROL DE ASIENROS***/
+const container = document.querySelector('.container');
+const seats = document.querySelectorAll('.row .seat:not(.occupied)');
+const count = document.getElementById('count');
+const total = document.getElementById('total');
+const movieSelect = document.getElementById('movie');
+
+let ticketPrice = +movieSelect.value;
+
+function init(){
+    setUser();
+}
+
+//Update total and count
+function updateSelectedCount() {
+    const selectedSeats = document.querySelectorAll('.row .seat.selected');
+    const selectedSeatsCount = selectedSeats.length;
+    count.innerText = selectedSeatsCount;
+    total.innerText = selectedSeatsCount * ticketPrice;
+}
+
+//Movie Select Event
+movieSelect.addEventListener('change', e => {
+    ticketPrice = +e.target.value;
+    updateSelectedCount();
+})
+
+//Seat click event
+container.addEventListener('click', e => {
+    if (e.target.classList.contains('seat') &&
+            !e.target.classList.contains('occupied')) {
+        e.target.classList.toggle('selected');
+    }
+    updateSelectedCount();
+})

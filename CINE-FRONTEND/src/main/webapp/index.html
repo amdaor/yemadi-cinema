@@ -1,0 +1,129 @@
+<!--
+    Universidad Nacional de Costa Rica
+    Escuela de Informática
+    EIF209 Programación IV, ciclo I 2021
+    Mauricio Gutiérrez Vásquez 118260119
+    Adolfo Di Carlo Martínez Martínez 118050228
+    Yeikol Villalobos Herrera 702670531
+    Proyecto #2, Cine
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="styles/default.css" />
+        <script src="javascript/cookies.js" type="text/javascript"></script>
+        <script src="javascript/setuser.js" type="text/javascript"></script>
+        <script src="javascript/getJson.js" type="text/javascript"></script>
+        <script src="javascript/billboard.js" type="text/javascript"></script>
+    </head>
+    <body onload="init();">
+        <!---SECCION CON LA BARRA DE NAVEGACION--->
+        <nav class="max-width navbar">
+
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+
+            <ul class="navbar-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a id="register" href="signup.html">Register</a></li>
+                <li>
+                    <form action="">
+                        <input type="text" placeholder="Search.." name="search" />
+                        <button type="submit">Search Movie</button>
+                    </form>
+                </li>
+                <li><a id="account" href="login.html">Login</a></li>
+
+            </ul>
+        </nav>
+        <!---SECCION CON EL BANNER--->
+        <header class="img-section">
+            <p>
+                <b>NCG </b> <br />
+                CINEMA
+            </p>
+            <p>NOW OPEN</p>
+        </header>
+
+
+
+        <!---SECCION CON LAS PELICULAS--->
+        <main class="section-movies" id="billboard">
+
+
+
+            <!-- Asi se debe crear en javascript -->
+            <!-- <div >
+                <div class="movie-box dropdown" id="asdasd" onmouseover="addFunctions();">
+                     <div class="movie-card"><img src="Movies/movie00.jpg" alt="" /></div>
+                     <div class="dropdown-schedules" id="asdasdfuncs">
+                         <div class="desc"><a onclick="seatSelector()" href="#"> MAY 28 , 11 am/A5 </a></div>
+                         <div class="desc"><a onclick="seatSelector()" href="#"> MAY 28 , 11 am/A5 </a></div>
+                         <div class="desc"><a onclick="seatSelector()" href="#"> MAY 28 , 11 am/A5 </a></div>
+                     </div>
+                 </div>
+                  Final asi se debe crear en javascript
+            </div> -->
+
+        </main>
+
+        <!--SECCION CON EL MODAL DE ASIENTOS -->
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <button type="button" id="close" class="close">&times;</button>
+                <div id="About-movie">
+                    <a style="color: white;" id="abtmovieDate"></a>
+                    <img id="abtmovieImg" style="width: 250px; height: 200px;" align="center" alt="IMAGEN"/>
+                </div>
+                <div class="movie-container">
+                    <ul class="showcase">
+                        <li>
+                                <div class="seat"></div>
+                            <small>N/A</small>
+                        </li>
+                        <li>
+                            <div class="seat selected"></div>
+                            <small>Selected</small>
+                        </li>
+                        <li>
+                            <div class="seat occupied"></div>
+                            <small>Occupied</small>
+                        </li>
+                    </ul>
+
+                    <div class="container" id="container">
+                        <div class="screen"></div>
+                        <div id="seats">
+                        </div>
+
+                        <p class="text">
+                            You have selected <span id="count">0</span> seats for the total price of $ <span id="total">0</span>
+                        </p>
+                        <button type="button" onclick="validatePurchase();">Purchase</button>
+                        
+                        <!-- <button type="submit" ><a href="confirm.html" class="btn-submit" > Purchase </a>   </button> -->
+                    </div>
+                </div><!-- final SECCION CON EL MODAL DE ASIENTOS -->
+            </div>
+        </div>
+
+
+        <!---SECCION CON EL FIN DE PAGINA--->
+        <footer>
+            <p>Total Soft Inc &copy; 2021</p>
+            <a href="https://github.com/yeikol2703">Yeikol2703</a>
+            <a href="https://github.com/dicarlomtz">Dicarlomtz</a>
+            <a href="https://github.com/mguti77">Mguti77</a>
+        </footer>
+    </body>
+</html>
